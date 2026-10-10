@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica 4. Medidor de salinidad - Conocimiento CDIO</title>
+<meta name="description" content="Resumen estructurado de Práctica 4. Medidor de salinidad para el agente tutor CDIO.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+<a class="button" href="index.html">← Inicio</a>
+<h1>Práctica 4. Medidor de salinidad</h1>
+<p>Construir un sensor de salinidad cuya señal pueda ser leída por el ADC del ESP8266, calibrarlo mediante datos experimentales y mostrar la salinidad en gramos.</p>
+<nav><a href="practica1.html">P1</a> <a href="practica2.html">P2</a> <a href="practica3.html">P3</a> <a href="practica4.html">P4</a> <a href="practica5.html">P5</a> <a href="practica6.html">P6</a> <a href="practica7.html">P7</a></nav>
+<div class="note"><strong>Fuente:</strong> documento de la práctica proporcionado por el profesorado. El contenido se ha resumido sin añadir datos técnicos externos.</div>
+</header>
+<main>
+<section>
+<h2>Documento original</h2>
+<p><a class="button" href="practica4.pdf">Abrir PDF original de la práctica 4</a></p>
+<p>El PDF original se incluye como fuente primaria. El resumen HTML de esta página sirve para facilitar el rastreo y la recuperación del contenido por el agente.</p>
+</section>
+<section>
+<h2>Material principal</h2>
+<ul><li>ESP8266</li><li>Sonda/electrodos para salinidad</li><li>Resistencias</li><li>Cables Dupont macho-macho</li></ul>
+</section>
+<section><h2>Principio de medida</h2><ul><li>La práctica relaciona la salinidad con la conductividad del agua y utiliza dos electrodos sumergidos.</li><li>Un electrodo se excita a 3,3 V y se aprovecha la corriente generada por la migración de iones para obtener una tensión de salida.</li></ul></section><section><h2>Acondicionamiento y diseño</h2><ul><li>El ADC del ESP8266 acepta el rango de 0 a menos de 1 V según la práctica, por lo que la señal debe acondicionarse.</li><li>Calcular los valores de R2 y R3 del divisor para que la tensión de salida no supere el rango del ADC, suponiendo despreciable Rsalinidad en ese cálculo.</li></ul></section><section><h2>Circuito y programación</h2><ul><li>Montar los electrodos y el divisor calculado y conectar la salida al ADC.</li><li>La práctica excita el electrodo desde el pin 5 mediante pulsos: nivel alto para realizar la medida y nivel bajo para preparar la siguiente.</li><li>Programar la excitación, leer el ADC y mostrar la lectura digital.</li></ul></section><section><h2>Calibración / análisis</h2><ul><li>Realizar medidas de lectura digital para diferentes cantidades de sal.</li><li>Calcular un polinomio interpolador de Lagrange; el documento recomienda utilizar una hoja Excel para los cálculos.</li><li>Incorporar el polinomio al programa para presentar la salinidad en gramos.</li></ul></section><section><h2>Testeo</h2><ul><li>Realizar nuevas medidas con distintos niveles de salinidad.</li><li>Comparar salinidad real, valor digital y salinidad calculada, y dibujar la gráfica de respuesta.</li></ul></section><section><h2>Nota sobre las tablas del documento</h2><ul><li>Las tablas de calibración y resultados del PDF no usan exactamente la misma lista de cantidades de sal en todas las páginas. Esta web no unifica esas listas: si se necesita una serie concreta de valores, debe consultarse el enunciado original o al profesorado.</li></ul></section>
+<section>
+<h2>Uso como conocimiento del tutor</h2>
+<p>Esta página describe qué actividades y comprobaciones aparecen en la práctica. El tutor debe utilizar estos datos para orientar la división de tareas y los criterios de validación, sin sustituir el razonamiento del alumnado ni inventar requisitos no presentes en el material.</p>
+</section>
+</main>
+<footer><small>Base de conocimiento pública para el Tutor CDIO.</small></footer>
+</body>
+</html>

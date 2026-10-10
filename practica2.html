@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica 2. El Convertidor ADC y la comunicación Serie - Conocimiento CDIO</title>
+<meta name="description" content="Resumen estructurado de Práctica 2. El Convertidor ADC y la comunicación Serie para el agente tutor CDIO.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+<a class="button" href="index.html">← Inicio</a>
+<h1>Práctica 2. El Convertidor ADC y la comunicación Serie</h1>
+<p>Diseñar un sistema con ESP8266 y potenciómetro para leer una tensión con el ADC, mostrarla por el monitor serie y comprobar la medida.</p>
+<nav><a href="practica1.html">P1</a> <a href="practica2.html">P2</a> <a href="practica3.html">P3</a> <a href="practica4.html">P4</a> <a href="practica5.html">P5</a> <a href="practica6.html">P6</a> <a href="practica7.html">P7</a></nav>
+<div class="note"><strong>Fuente:</strong> documento de la práctica proporcionado por el profesorado. El contenido se ha resumido sin añadir datos técnicos externos.</div>
+</header>
+<main>
+<section>
+<h2>Documento original</h2>
+<p><a class="button" href="practica2.pdf">Abrir PDF original de la práctica 2</a></p>
+<p>El PDF original se incluye como fuente primaria. El resumen HTML de esta página sirve para facilitar el rastreo y la recuperación del contenido por el agente.</p>
+</section>
+<section>
+<h2>Material principal</h2>
+<ul><li>ESP8266</li><li>Potenciómetro</li><li>Resistencias de 10 kΩ y 1 kΩ</li><li>Cables Dupont macho-macho</li></ul>
+</section>
+<section><h2>ADC y análisis</h2><ul><li>El ADC del ESP8266 trabaja con 10 bits y genera valores digitales de 0 a 1023.</li><li>El documento indica un rango de medida de 0 a menos de 1 V y una resolución aproximada de 976 µV.</li><li>Analizar el divisor de tensión y comprobar que la tensión aplicada al ADC es adecuada.</li></ul></section><section><h2>Circuito</h2><ul><li>Montar el divisor de tensión con el potenciómetro y las resistencias indicadas en la práctica.</li><li>Conectar la salida del divisor a la entrada analógica del ESP8266.</li></ul></section><section><h2>Programación</h2><ul><li>Usar analogRead() para leer el ADC.</li><li>Inicializar la comunicación serie a 9600 baudios y mostrar el valor leído.</li><li>Modificar el programa para presentar la lectura en mV; la práctica propone usar map() y también pide obtener la expresión matemática equivalente sin usar esa función.</li></ul></section><section><h2>Testeo</h2><ul><li>Abrir el monitor serie y comprobar que trabaja a 9600 baudios.</li><li>Comparar la lectura obtenida por el sistema con una medida realizada con un multímetro.</li></ul></section><section><h2>Ampliaciones propuestas</h2><ul><li>Encender un LED al superar un umbral, por ejemplo 500 mV.</li><li>Construir un vúmetro con varios LEDs que se iluminen progresivamente al aumentar la tensión.</li></ul></section>
+<section>
+<h2>Uso como conocimiento del tutor</h2>
+<p>Esta página describe qué actividades y comprobaciones aparecen en la práctica. El tutor debe utilizar estos datos para orientar la división de tareas y los criterios de validación, sin sustituir el razonamiento del alumnado ni inventar requisitos no presentes en el material.</p>
+</section>
+</main>
+<footer><small>Base de conocimiento pública para el Tutor CDIO.</small></footer>
+</body>
+</html>

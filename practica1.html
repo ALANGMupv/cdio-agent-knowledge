@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica 1. Hola Mundo de Arduino - Conocimiento CDIO</title>
+<meta name="description" content="Resumen estructurado de Práctica 1. Hola Mundo de Arduino para el agente tutor CDIO.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+<a class="button" href="index.html">← Inicio</a>
+<h1>Práctica 1. Hola Mundo de Arduino</h1>
+<p>Compilar un programa sencillo de Arduino para controlar un LED con un ESP8266, montando el circuito, programándolo y comprobando su funcionamiento.</p>
+<nav><a href="practica1.html">P1</a> <a href="practica2.html">P2</a> <a href="practica3.html">P3</a> <a href="practica4.html">P4</a> <a href="practica5.html">P5</a> <a href="practica6.html">P6</a> <a href="practica7.html">P7</a></nav>
+<div class="note"><strong>Fuente:</strong> documento de la práctica proporcionado por el profesorado. El contenido se ha resumido sin añadir datos técnicos externos.</div>
+</header>
+<main>
+<section>
+<h2>Documento original</h2>
+<p><a class="button" href="practica1.pdf">Abrir PDF original de la práctica 1</a></p>
+<p>El PDF original se incluye como fuente primaria. El resumen HTML de esta página sirve para facilitar el rastreo y la recuperación del contenido por el agente.</p>
+</section>
+<section>
+<h2>Material principal</h2>
+<ul><li>Microcontrolador ESP8266</li><li>LED rojo</li><li>Resistencia</li><li>Cables Dupont macho-macho</li></ul>
+</section>
+<section><h2>Circuito y análisis</h2><ul><li>Consultar el patillaje del ESP8266 y la hoja de características del LED.</li><li>Obtener la tensión umbral y la corriente máxima del LED para elegir una resistencia que limite la corriente.</li><li>En la hoja de características incluida en la práctica, la corriente directa continua máxima del LED es 20 mA; la tensión directa típica indicada es 2 V y la máxima 2,5 V.</li><li>Montar el LED respetando ánodo/cátodo; el cátodo se conecta a GND.</li></ul></section><section><h2>Programación</h2><ul><li>Escribir en el IDE de Arduino un programa que configure el pin del LED como salida y alterne niveles HIGH/LOW.</li><li>Compilar, corregir errores y cargar el programa en el ESP8266.</li></ul></section><section><h2>Testeo</h2><ul><li>El resultado esperado indicado por la práctica es que el LED se encienda y se apague alternativamente a una frecuencia de 1 Hz.</li></ul></section><section><h2>Ampliaciones propuestas</h2><ul><li>Añadir varios LEDs y crear secuencias con diferentes frecuencias o colores.</li><li>Usar nueve LEDs para representar números o letras.</li></ul></section>
+<section>
+<h2>Uso como conocimiento del tutor</h2>
+<p>Esta página describe qué actividades y comprobaciones aparecen en la práctica. El tutor debe utilizar estos datos para orientar la división de tareas y los criterios de validación, sin sustituir el razonamiento del alumnado ni inventar requisitos no presentes en el material.</p>
+</section>
+</main>
+<footer><small>Base de conocimiento pública para el Tutor CDIO.</small></footer>
+</body>
+</html>

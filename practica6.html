@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica 6. Medidor de pH - Conocimiento CDIO</title>
+<meta name="description" content="Resumen estructurado de Práctica 6. Medidor de pH para el agente tutor CDIO.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+<a class="button" href="index.html">← Inicio</a>
+<h1>Práctica 6. Medidor de pH</h1>
+<p>Construir un medidor de pH con una sonda SEN0161, un circuito acondicionador, ADS1115 y ESP8266; calibrar el sistema y comprobarlo con diferentes soluciones.</p>
+<nav><a href="practica1.html">P1</a> <a href="practica2.html">P2</a> <a href="practica3.html">P3</a> <a href="practica4.html">P4</a> <a href="practica5.html">P5</a> <a href="practica6.html">P6</a> <a href="practica7.html">P7</a></nav>
+<div class="note"><strong>Fuente:</strong> documento de la práctica proporcionado por el profesorado. El contenido se ha resumido sin añadir datos técnicos externos.</div>
+</header>
+<main>
+<section>
+<h2>Documento original</h2>
+<p><a class="button" href="practica6.pdf">Abrir PDF original de la práctica 6</a></p>
+<p>El PDF original se incluye como fuente primaria. El resumen HTML de esta página sirve para facilitar el rastreo y la recuperación del contenido por el agente.</p>
+</section>
+<section>
+<h2>Material principal</h2>
+<ul><li>ESP8266</li><li>Sonda de pH SEN0161 con acondicionador</li><li>ADS1115</li><li>Cables Dupont macho-macho</li></ul>
+</section>
+<section><h2>Sensor y acondicionamiento</h2><ul><li>La sonda mide la actividad de iones de hidrógeno y su acondicionador entrega una tensión analógica.</li><li>El documento indica para la sonda un rango de detección de 0 a 14 pH, temperatura de 5 a 60 °C, Zero Point de 7±0,5 pH y tiempo de respuesta inferior a 2 minutos.</li><li>Para el acondicionador se indica alimentación de 3,3 a 5,5 V, salida de 0 a 3 V y precisión ±0,1 a 25 °C.</li></ul></section><section><h2>Circuito y programación</h2><ul><li>Montar la sonda, el acondicionador y el ADS1115 sobre el ESP8266.</li><li>Completar el programa para leer el ADS1115 y obtener el valor de pH.</li><li>Tomar varias muestras y calcular su media mediante averageSample para mejorar la precisión.</li></ul></section><section><h2>Calibración</h2><ul><li>Introducir la sonda en la solución de 7 pH y calcular un offset como 7 menos el valor leído; incorporar ese offset al programa.</li><li>Lavar la sonda con agua destilada y sumergirla en una solución de 4 pH.</li><li>Esperar aproximadamente un minuto y ajustar el potenciómetro del acondicionador hasta obtener una lectura de 4 pH.</li></ul></section><section><h2>Testeo</h2><ul><li>Realizar medidas con distintas soluciones y registrar el valor de tensión y el valor de pH obtenido.</li></ul></section><section><h2>Nota sobre el rango óptimo</h2><ul><li>El propio PDF contiene dos referencias distintas al rango óptimo del huerto: en Objetivos aparece 5,5-5,8 pH y en la Introducción se indica 5,5-6,5 pH. Esta web conserva la discrepancia y recomienda confirmarla con el profesorado si afecta a un criterio de aceptación.</li></ul></section>
+<section>
+<h2>Uso como conocimiento del tutor</h2>
+<p>Esta página describe qué actividades y comprobaciones aparecen en la práctica. El tutor debe utilizar estos datos para orientar la división de tareas y los criterios de validación, sin sustituir el razonamiento del alumnado ni inventar requisitos no presentes en el material.</p>
+</section>
+</main>
+<footer><small>Base de conocimiento pública para el Tutor CDIO.</small></footer>
+</body>
+</html>

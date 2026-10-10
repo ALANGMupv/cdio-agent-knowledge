@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Conocimiento - Tutor CDIO: prácticas 1 a 7</title>
+<meta name="description" content="Base de conocimiento pública de las prácticas CDIO 1 a 7 para un agente tutor de división de tareas, validación y reparto.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+<h1>Base de conocimiento - Tutor CDIO</h1>
+<p>Resumen estructurado de las prácticas 1 a 7 utilizadas en el proyecto CDIO del huerto hidropónico.</p>
+<div class="note">
+<strong>Propósito:</strong> servir como fuente de conocimiento del agente. Estas páginas recogen únicamente información derivada de los documentos de prácticas proporcionados por el profesorado.
+</div>
+<nav>
+<a href="#p1">P1 Arduino</a>
+<a href="#p2">P2 ADC</a>
+<a href="#p3">P3 Humedad</a>
+<a href="#p4">P4 Salinidad</a>
+<a href="#p5">P5 Temperatura</a>
+<a href="#p6">P6 pH</a>
+<a href="#p7">P7 Iluminación</a>
+</nav>
+</header>
+<main>
+<section>
+<h2>Cómo está organizada la información</h2>
+<p>Cada práctica se separa en objetivo, material, circuito/análisis, programación, calibración cuando procede y testeo. Las páginas detalladas contienen información adicional para que el agente pueda detectar tareas omitidas y ayudar a formular comprobaciones verificables.</p>
+<p>Si un valor o requisito no aparece en estas páginas, el agente no debe inventarlo: debe remitir al enunciado original o al profesorado.</p>
+</section>
+
+<section id="p1">
+<h2>Práctica 1. Hola Mundo de Arduino</h2>
+<p>Compilar un programa sencillo de Arduino para controlar un LED con un ESP8266, montando el circuito, programándolo y comprobando su funcionamiento.</p>
+<ul><li>Consultar el patillaje del ESP8266 y la hoja de características del LED.</li><li>Obtener la tensión umbral y la corriente máxima del LED para elegir una resistencia que limite la corriente.</li><li>Escribir en el IDE de Arduino un programa que configure el pin del LED como salida y alterne niveles HIGH/LOW.</li><li>Compilar, corregir errores y cargar el programa en el ESP8266.</li><li>El resultado esperado indicado por la práctica es que el LED se encienda y se apague alternativamente a una frecuencia de 1 Hz.</li><li>Añadir varios LEDs y crear secuencias con diferentes frecuencias o colores.</li><li>Usar nueve LEDs para representar números o letras.</li></ul>
+<p><a class="button" href="practica1.html">Ver detalle de la práctica 1</a></p>
+</section>
+<section id="p2">
+<h2>Práctica 2. El Convertidor ADC y la comunicación Serie</h2>
+<p>Diseñar un sistema con ESP8266 y potenciómetro para leer una tensión con el ADC, mostrarla por el monitor serie y comprobar la medida.</p>
+<ul><li>El ADC del ESP8266 trabaja con 10 bits y genera valores digitales de 0 a 1023.</li><li>El documento indica un rango de medida de 0 a menos de 1 V y una resolución aproximada de 976 µV.</li><li>Montar el divisor de tensión con el potenciómetro y las resistencias indicadas en la práctica.</li><li>Conectar la salida del divisor a la entrada analógica del ESP8266.</li><li>Usar analogRead() para leer el ADC.</li><li>Inicializar la comunicación serie a 9600 baudios y mostrar el valor leído.</li><li>Abrir el monitor serie y comprobar que trabaja a 9600 baudios.</li></ul>
+<p><a class="button" href="practica2.html">Ver detalle de la práctica 2</a></p>
+</section>
+<section id="p3">
+<h2>Práctica 3. El sensor de Humedad</h2>
+<p>Comunicar un ADS1115 con el ESP8266 mediante I2C para medir humedad con un sensor SEN0193, calibrar la lectura y expresarla como porcentaje.</p>
+<ul><li>El ADS1115 se comunica con el microcontrolador mediante I2C usando SCL y SDA.</li><li>En la práctica se trabaja con direccionamiento 0x48/0x49 según la conexión de ADDR y se recuerda que el convertidor dispone de cuatro canales analógicos.</li><li>El SEN0193 se alimenta entre 3,3 V y 5 V, tiene salida máxima indicada de 3 V y corriente de operación de 5 mA.</li><li>Conectar el sensor a uno de los canales analógicos del ADS1115 y montar el ADS1115 sobre el ESP8266 mediante la placa de interconexiones.</li><li>Completar el constructor del ADS1115, inicializarlo, elegir la ganancia apropiada y leer el canal correspondiente.</li><li>Compilar, corregir errores, cargar el programa y probar la lectura.</li><li>Tomar una lectura con el sensor seco y guardarla como medidaSeco.</li></ul>
+<p><a class="button" href="practica3.html">Ver detalle de la práctica 3</a></p>
+</section>
+<section id="p4">
+<h2>Práctica 4. Medidor de salinidad</h2>
+<p>Construir un sensor de salinidad cuya señal pueda ser leída por el ADC del ESP8266, calibrarlo mediante datos experimentales y mostrar la salinidad en gramos.</p>
+<ul><li>La práctica relaciona la salinidad con la conductividad del agua y utiliza dos electrodos sumergidos.</li><li>Un electrodo se excita a 3,3 V y se aprovecha la corriente generada por la migración de iones para obtener una tensión de salida.</li><li>El ADC del ESP8266 acepta el rango de 0 a menos de 1 V según la práctica, por lo que la señal debe acondicionarse.</li><li>Calcular los valores de R2 y R3 del divisor para que la tensión de salida no supere el rango del ADC, suponiendo despreciable Rsalinidad en ese cálculo.</li><li>Montar los electrodos y el divisor calculado y conectar la salida al ADC.</li><li>La práctica excita el electrodo desde el pin 5 mediante pulsos: nivel alto para realizar la medida y nivel bajo para preparar la siguiente.</li><li>Realizar medidas de lectura digital para diferentes cantidades de sal.</li></ul>
+<p><a class="button" href="practica4.html">Ver detalle de la práctica 4</a></p>
+</section>
+<section id="p5">
+<h2>Práctica 5. Sensor de Temperatura</h2>
+<p>Medir temperatura ambiente mediante un NTC y su circuito de acondicionamiento, muestrear la señal con un ADS1115 y procesarla con el ESP8266.</p>
+<ul><li>Partir de la función de transferencia del circuito acondicionador obtenida en Electrónica Básica, expresada en la práctica como V0 = m·T + b.</li><li>Combinarla con la función de transferencia del ADS1115, cuyo rango depende de la ganancia.</li><li>Montar el NTC y su circuito de acondicionamiento junto con el ADS1115 y el ESP8266.</li><li>La placa de interconexiones realiza las conexiones I2C (SDA, SCL, ADDR) y alimentación indicadas en la práctica.</li><li>Completar el código para leer el ADS1115 y aplicar la fórmula de temperatura a partir de la lectura digital.</li><li>Compilar y ejecutar el programa.</li><li>Crear una función averageSample que reciba el número de muestras y el vector de muestras y devuelva su valor medio.</li></ul>
+<p><a class="button" href="practica5.html">Ver detalle de la práctica 5</a></p>
+</section>
+<section id="p6">
+<h2>Práctica 6. Medidor de pH</h2>
+<p>Construir un medidor de pH con una sonda SEN0161, un circuito acondicionador, ADS1115 y ESP8266; calibrar el sistema y comprobarlo con diferentes soluciones.</p>
+<ul><li>La sonda mide la actividad de iones de hidrógeno y su acondicionador entrega una tensión analógica.</li><li>El documento indica para la sonda un rango de detección de 0 a 14 pH, temperatura de 5 a 60 °C, Zero Point de 7±0,5 pH y tiempo de respuesta inferior a 2 minutos.</li><li>Montar la sonda, el acondicionador y el ADS1115 sobre el ESP8266.</li><li>Completar el programa para leer el ADS1115 y obtener el valor de pH.</li><li>Introducir la sonda en la solución de 7 pH y calcular un offset como 7 menos el valor leído; incorporar ese offset al programa.</li><li>Lavar la sonda con agua destilada y sumergirla en una solución de 4 pH.</li><li>Realizar medidas con distintas soluciones y registrar el valor de tensión y el valor de pH obtenido.</li></ul>
+<p><a class="button" href="practica6.html">Ver detalle de la práctica 6</a></p>
+</section>
+<section id="p7">
+<h2>Práctica 7. Sensor de Iluminación</h2>
+<p>Medir y clasificar niveles de iluminación mediante fotodiodo, acondicionamiento analógico, ADS1115 y ESP8266.</p>
+<ul><li>El circuito de acondicionamiento del fotodiodo se desarrolló previamente en Electrónica Básica y su comportamiento no es lineal.</li><li>Utilizar los valores analógicos obtenidos para cinco condiciones: oscuridad, sombra, luz ambiente, linterna del móvil y foco de 150 W.</li><li>Montar fotodiodo, resistencias, LM2904, ADS1115 y ESP8266 según el esquema de la práctica.</li><li>El ADS1115 se conecta al ESP8266 mediante la placa de interconexiones I2C.</li><li>Declarar y configurar el ADS1115.</li><li>Leer el canal al que está conectado el acondicionador.</li><li>Probar el sistema en oscuridad, sombra, luz ambiente, con la linterna del móvil y con un foco.</li></ul>
+<p><a class="button" href="practica7.html">Ver detalle de la práctica 7</a></p>
+</section>
+
+<section>
+<h2>PDF originales</h2>
+<p>Se incluyen también los documentos originales completos como fuente primaria.</p>
+<ul>
+<li><a href="practica1.pdf">Práctica 1 — PDF original</a></li>
+<li><a href="practica2.pdf">Práctica 2 — PDF original</a></li>
+<li><a href="practica3.pdf">Práctica 3 — PDF original</a></li>
+<li><a href="practica4.pdf">Práctica 4 — PDF original</a></li>
+<li><a href="practica5.pdf">Práctica 5 — PDF original</a></li>
+<li><a href="practica6.pdf">Práctica 6 — PDF original</a></li>
+<li><a href="practica7.pdf">Práctica 7 — PDF original</a></li>
+</ul>
+</section>
+
+</main>
+<footer><small>Base de conocimiento pública para el Tutor CDIO.</small></footer>
+</body>
+</html>

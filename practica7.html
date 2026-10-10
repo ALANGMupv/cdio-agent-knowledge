@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica 7. Sensor de Iluminación - Conocimiento CDIO</title>
+<meta name="description" content="Resumen estructurado de Práctica 7. Sensor de Iluminación para el agente tutor CDIO.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+<a class="button" href="index.html">← Inicio</a>
+<h1>Práctica 7. Sensor de Iluminación</h1>
+<p>Medir y clasificar niveles de iluminación mediante fotodiodo, acondicionamiento analógico, ADS1115 y ESP8266.</p>
+<nav><a href="practica1.html">P1</a> <a href="practica2.html">P2</a> <a href="practica3.html">P3</a> <a href="practica4.html">P4</a> <a href="practica5.html">P5</a> <a href="practica6.html">P6</a> <a href="practica7.html">P7</a></nav>
+<div class="note"><strong>Fuente:</strong> documento de la práctica proporcionado por el profesorado. El contenido se ha resumido sin añadir datos técnicos externos.</div>
+</header>
+<main>
+<section>
+<h2>Documento original</h2>
+<p><a class="button" href="practica7.pdf">Abrir PDF original de la práctica 7</a></p>
+<p>El PDF original se incluye como fuente primaria. El resumen HTML de esta página sirve para facilitar el rastreo y la recuperación del contenido por el agente.</p>
+</section>
+<section>
+<h2>Material principal</h2>
+<ul><li>ESP8266</li><li>Fotodiodo VTB8440BH</li><li>Resistencias</li><li>Amplificador operacional LM2904</li><li>ADS1115</li><li>Cables Dupont macho-macho</li></ul>
+</section>
+<section><h2>Análisis previo</h2><ul><li>El circuito de acondicionamiento del fotodiodo se desarrolló previamente en Electrónica Básica y su comportamiento no es lineal.</li><li>Utilizar los valores analógicos obtenidos para cinco condiciones: oscuridad, sombra, luz ambiente, linterna del móvil y foco de 150 W.</li><li>Combinar la función de transferencia del acondicionador con la del ADS1115 para calcular los valores digitales esperados.</li></ul></section><section><h2>Circuito</h2><ul><li>Montar fotodiodo, resistencias, LM2904, ADS1115 y ESP8266 según el esquema de la práctica.</li><li>El ADS1115 se conecta al ESP8266 mediante la placa de interconexiones I2C.</li></ul></section><section><h2>Programación</h2><ul><li>Declarar y configurar el ADS1115.</li><li>Leer el canal al que está conectado el acondicionador.</li><li>Comparar la lectura con los umbrales calculados y mostrar por pantalla el nivel de luz: oscuridad, sombra, luz ambiente o nivel alto de iluminación.</li></ul></section><section><h2>Testeo</h2><ul><li>Probar el sistema en oscuridad, sombra, luz ambiente, con la linterna del móvil y con un foco.</li><li>Registrar condición, valor digital y mensaje mostrado por pantalla.</li><li>Representar la respuesta del sistema.</li></ul></section>
+<section>
+<h2>Uso como conocimiento del tutor</h2>
+<p>Esta página describe qué actividades y comprobaciones aparecen en la práctica. El tutor debe utilizar estos datos para orientar la división de tareas y los criterios de validación, sin sustituir el razonamiento del alumnado ni inventar requisitos no presentes en el material.</p>
+</section>
+</main>
+<footer><small>Base de conocimiento pública para el Tutor CDIO.</small></footer>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Práctica 5. Sensor de Temperatura - Conocimiento CDIO</title>
+<meta name="description" content="Resumen estructurado de Práctica 5. Sensor de Temperatura para el agente tutor CDIO.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+<a class="button" href="index.html">← Inicio</a>
+<h1>Práctica 5. Sensor de Temperatura</h1>
+<p>Medir temperatura ambiente mediante un NTC y su circuito de acondicionamiento, muestrear la señal con un ADS1115 y procesarla con el ESP8266.</p>
+<nav><a href="practica1.html">P1</a> <a href="practica2.html">P2</a> <a href="practica3.html">P3</a> <a href="practica4.html">P4</a> <a href="practica5.html">P5</a> <a href="practica6.html">P6</a> <a href="practica7.html">P7</a></nav>
+<div class="note"><strong>Fuente:</strong> documento de la práctica proporcionado por el profesorado. El contenido se ha resumido sin añadir datos técnicos externos.</div>
+</header>
+<main>
+<section>
+<h2>Documento original</h2>
+<p><a class="button" href="practica5.pdf">Abrir PDF original de la práctica 5</a></p>
+<p>El PDF original se incluye como fuente primaria. El resumen HTML de esta página sirve para facilitar el rastreo y la recuperación del contenido por el agente.</p>
+</section>
+<section>
+<h2>Material principal</h2>
+<ul><li>ESP8266</li><li>NTC NTCLE100E3</li><li>Resistencias</li><li>ADS1115</li><li>Cables Dupont macho-macho</li></ul>
+</section>
+<section><h2>Análisis matemático</h2><ul><li>Partir de la función de transferencia del circuito acondicionador obtenida en Electrónica Básica, expresada en la práctica como V0 = m·T + b.</li><li>Combinarla con la función de transferencia del ADS1115, cuyo rango depende de la ganancia.</li><li>Obtener la expresión final que relaciona la temperatura T con el valor digital leído Vd.</li></ul></section><section><h2>Circuito</h2><ul><li>Montar el NTC y su circuito de acondicionamiento junto con el ADS1115 y el ESP8266.</li><li>La placa de interconexiones realiza las conexiones I2C (SDA, SCL, ADDR) y alimentación indicadas en la práctica.</li></ul></section><section><h2>Programación</h2><ul><li>Completar el código para leer el ADS1115 y aplicar la fórmula de temperatura a partir de la lectura digital.</li><li>Compilar y ejecutar el programa.</li></ul></section><section><h2>Mejora de precisión</h2><ul><li>Crear una función averageSample que reciba el número de muestras y el vector de muestras y devuelva su valor medio.</li><li>Usar el promedio para obtener una lectura más estable.</li></ul></section><section><h2>Testeo</h2><ul><li>Variar la temperatura, por ejemplo introduciendo la NTC en agua y cambiando progresivamente su temperatura.</li><li>Comparar la temperatura calculada por el sistema con la obtenida mediante un termómetro externo.</li><li>Registrar temperatura real, valor digital y temperatura del sistema y representar la curva.</li></ul></section>
+<section>
+<h2>Uso como conocimiento del tutor</h2>
+<p>Esta página describe qué actividades y comprobaciones aparecen en la práctica. El tutor debe utilizar estos datos para orientar la división de tareas y los criterios de validación, sin sustituir el razonamiento del alumnado ni inventar requisitos no presentes en el material.</p>
+</section>
+</main>
+<footer><small>Base de conocimiento pública para el Tutor CDIO.</small></footer>
+</body>
+</html>
